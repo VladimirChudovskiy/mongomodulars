@@ -1,0 +1,29 @@
+.found{
+    margin-bottom: 20px;
+}
+.row-hover:hover{
+    background: grey;
+}
+.name2 {
+    float: left;
+    width: 550px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+}
+.kind2 {
+    float: right;
+    width: 550px;
+}
+.imade {
+    padding-top: 10px;
+}
+
+.half-screen {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.pl-null {
+    padding-left: 0px;
+}

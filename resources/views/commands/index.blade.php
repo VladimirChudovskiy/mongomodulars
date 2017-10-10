@@ -9,13 +9,13 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            @include('service::services.parts.tabs')
+            @include('services.parts.tabs')
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             @if(count($commands) > 0)
-                <table class="table table-hover">
+                <table class="table table-striped table-bordered table-hover table-condensed table-hover">
                     <thead>
                         <tr>
                             <th>System name</th>

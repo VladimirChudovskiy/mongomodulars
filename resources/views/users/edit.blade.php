@@ -1,4 +1,4 @@
-@extends('core::layouts.app')
+@extends('layouts.app')
 
 @section('content')
 
@@ -9,7 +9,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            @include('acl::users.parts.tabs')
+            @include('users.parts.tabs')
         </div>
     </div>
     <div class="row">

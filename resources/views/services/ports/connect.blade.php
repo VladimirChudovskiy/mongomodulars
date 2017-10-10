@@ -8,7 +8,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            @include('service::services.parts.tabs')
+            @include('services.parts.tabs')
         </div>
     </div>
     <div class="row">

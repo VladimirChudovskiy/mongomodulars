@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-md-12">
             @if(count($ecbs)>0)
-                <table class="table table-hovered">
+                <table class="table table-striped table-bordered table-hover table-condensed table-hovered">
                     <tr>
                         <th>Name</th>
                         <th>Action</th>

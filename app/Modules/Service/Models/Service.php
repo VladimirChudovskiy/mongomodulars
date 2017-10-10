@@ -78,4 +78,26 @@ class Service extends Model
 //        $this->ports = $ports;
 //        $this->save();
 //    }
+
+    /**
+     * @param $data
+     * @param $uid
+     */
+    public function createService($data, $uid){
+        $this->name = $data->input('name');
+        $this->kind = $data->input('kind');
+        $this->user_id = $uid;
+        $this->code = intval(rand(10, 99).time());
+        $this->version = 1;
+        $this->save();
+    }
+
+    public function create($data){
+        foreach ($data as $k=>$v){
+            if($k != '_token'){
+                $this->$k = $v;
+            }
+        }
+        $this->save();
+    }
 }

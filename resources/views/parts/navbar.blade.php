@@ -25,10 +25,15 @@
                        role="button"
                        aria-haspopup="true"
                        aria-expanded="false">
+                        <span class="fa fa-gears"></span>
                         Настройки <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{ route('users.index') }}">Пользователи</a></li>
+                        <li>
+                            <a href="{{ route('users.index') }}">
+                                Пользователи
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown">

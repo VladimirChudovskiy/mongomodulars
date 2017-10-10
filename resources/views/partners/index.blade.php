@@ -1,4 +1,4 @@
-@extends('core::layouts.app')
+@extends('layouts.app')
 
 @section('content')
         <div class="row">
@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-12">
                 @if(count($partners)>0)
-                    <table class="table table-hovered">
+                    <table class="table table-striped table-bordered table-hover table-condensed table-hovered">
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
