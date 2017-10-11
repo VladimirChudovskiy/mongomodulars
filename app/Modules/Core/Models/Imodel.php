@@ -29,11 +29,29 @@ class Imodel extends Model
 
     public function store($data){
         foreach ($data as $k=>$v){
-            if($k != '_token'){
+            if($k != '_token' && $k != '_method'){
                 $this->$k = $v;
             }
         }
         return $this->save();
+    }
+
+    public function update(array $attributes = [], array $options = [])
+    {
+        if (! $this->exists) {
+            return false;
+        }
+
+        return $this->fill($attributes)->save($options);
+    }
+
+    public function fill(array $attributes)
+    {
+        foreach ($attributes as $key => $value) {
+            $this->setAttribute($key, $value);
+        }
+
+        return $this;
     }
 
 }

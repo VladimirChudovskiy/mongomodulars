@@ -80,7 +80,14 @@ class LocaleController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        //
+        $locale = Locale::find($id);
+        $form_data = converter($request->except('_token'))
+            ->toBool('active')
+            ->get();
+
+        $locale->update($form_data);
+
+        return redirect(route('locales.index'));
     }
 
     /**
