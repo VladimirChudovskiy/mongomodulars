@@ -2,6 +2,7 @@
 
 namespace App\Modules\Acl\Models;
 
+use App\Modules\Core\Models\Imodel;
 use App\Modules\I18n\Traits\TranslateProperty;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -11,7 +12,7 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Moloquent\Eloquent\Model;
 
-class User extends Model implements
+class User extends Imodel implements
     AuthenticatableContract,
     AuthorizableContract,
     CanResetPasswordContract
@@ -25,15 +26,6 @@ class User extends Model implements
     public $show_count = 10;
     public $query_where = [];
 
-    public function getWithFilter($params=null){
-        if(isset($params['show_count'])){
-            $this->show_count = $params['show_count'];
-        }
-        if(isset($params['partner'])){
-            $this->query_where['partner'] = true;
-        }
-        return $this->where($this->query_where)->paginate($this->show_count);
-    }
 
     public function isPartner(){
         if(isset($this->partner) && $this->partner == true){
@@ -58,5 +50,6 @@ class User extends Model implements
         }
         return $this;
     }
+
 
 }

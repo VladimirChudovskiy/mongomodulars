@@ -12,18 +12,46 @@
 function filter_from_request(){
     $result = [];
     $filter_params = array_merge(get_filters_in($_GET), get_filters_in($_POST));
-//    dd($filter_params);
+
+
+    foreach ($filter_params as $k=>$v){
+        $result[] = prepare_filter_to_query($k, $v);
+    }
 
     return $result;
 }
 
+
+
 /**
- * Get all items from array where key contain "filter_" string
+ * Get all items from array where key contain "filter__" string
  * @param $data - array
  * @return array
  */
 function get_filters_in($data){
-    $result = get_items_where_key_contain($data, 'filter_');
+    $result = get_items_where_key_contain($data, 'filter__');
+
+    return $result;
+}
+
+function prepare_filter_to_query($k, $v){
+    $result = [];
+
+    $operations = [
+        'gt' => '>',
+        'lt' => '<',
+        'eq' => '=',
+        'like' => 'like',
+        'in' => '=',
+    ];
+
+    $parts = explode('__', $k);
+    $result['field'] = $parts[1];
+    $result['operation'] = $operations[$parts[2]];
+    if($result['operation'] == 'like'){
+        $v = '%'.$v.'%';
+    }
+    $result['value'] = $v;
 
     return $result;
 }
