@@ -20,7 +20,6 @@ class UserController extends BaseController
     {
         $this->data['users'] = User::filter(filter_from_request())->paginate(10);
 
-
         return view('users.index', $this->data);
     }
 

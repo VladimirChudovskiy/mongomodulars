@@ -1,5 +1,11 @@
 <?php
 
+use \App\Modules\Core\Helpers\Converter;
+
+function converter($data){
+    return new Converter($data);
+}
+
 /**
  * Handle $_GET and $_POST params, find filter query and prepare array for Model method getWithFilter
  *

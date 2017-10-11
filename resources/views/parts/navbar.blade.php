@@ -34,6 +34,11 @@
                                 Пользователи
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('locales.index') }}">
+                                Языки
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown">

@@ -80,3 +80,6 @@ Route::group(['prefix' => 'services/{id}'], function () {
     Route::get('delete', 'ServiceController@destroy')->name('services.delete');
     Route::get('qr', 'ServiceController@qr')->name('services.qr');
 });
+
+Route::resource('locales', 'LocaleController');
+Route::get('locales/{id}/delete', 'LocaleController@destroy')->name('locales.delete');

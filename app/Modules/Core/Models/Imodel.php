@@ -26,4 +26,14 @@ class Imodel extends Model
         }
     }
 
+
+    public function store($data){
+        foreach ($data as $k=>$v){
+            if($k != '_token'){
+                $this->$k = $v;
+            }
+        }
+        return $this->save();
+    }
+
 }
