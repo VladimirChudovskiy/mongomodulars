@@ -18,8 +18,8 @@ class UserController extends BaseController
      */
     public function index()
     {
-        $user_model = new User();
-        $this->data['users'] = $user_model->getWithFilter(filter_from_request());
+        $this->data['users'] = User::filter(filter_from_request())->paginate(10);
+
 
         return view('users.index', $this->data);
     }

@@ -1,8 +1,10 @@
 {!! Form::open(['route'=>['users.index']]) !!}
 
+    {!! Form::hidden('_method', 'GET') !!}
+
     <div class="col-md-3">
         <div class="form-group">
-            {!! Form::text('f_name_like', null, [
+            {!! Form::text('filter__name__eq', null, [
                 'class' => 'form-control',
                 'placeholder' => 'Name'
             ]) !!}
@@ -10,7 +12,7 @@
     </div>
     <div class="col-md-3">
         <div class="form-group">
-            {!! Form::text('f_phone_like', null, [
+            {!! Form::text('filter__phone__like', null, [
                 'class' => 'form-control',
                 'placeholder' => 'Phone'
             ]) !!}
@@ -18,7 +20,7 @@
     </div>
     <div class="col-md-3">
         <div class="form-group">
-            {!! Form::text('f_email_like', null, [
+            {!! Form::text('filter__email__like', null, [
                 'class' => 'form-control',
                 'placeholder' => 'Email'
             ]) !!}
