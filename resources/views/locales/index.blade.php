@@ -1,5 +1,15 @@
 @extends('layouts.app')
 
+@section('content_title')
+    <h3 class="panel-title">
+        Языки
+        <a href="{{ route('locales.create') }}" class="found btn btn-default btn-sm">
+            <span class="fa fa-plus"></span>
+            Добавить
+        </a>
+    </h3>
+@endsection
+
 @section('content')
         <div class="row">
             <div class="col-md-4">

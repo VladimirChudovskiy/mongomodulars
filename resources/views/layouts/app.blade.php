@@ -14,7 +14,7 @@
 
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Panel title</h3>
+                    @yield('content_title')
                 </div>
                 <div class="panel-body">
                     @yield('content')
