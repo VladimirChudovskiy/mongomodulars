@@ -23,7 +23,7 @@ class CreateI18nTables extends Migration
 //            $table->string('section')->index();
 //            $table->string('type')->index();
 //            $table->string('key')->index();
-            $table->string('full_key')->index()->unique();
+            $table->string('full_key')->index();
             $table->string('value');
             $table->timestamps();
         });

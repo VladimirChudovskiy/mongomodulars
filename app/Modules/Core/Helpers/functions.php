@@ -12,7 +12,7 @@
 function filter_from_request(){
     $result = [];
     $filter_params = array_merge(get_filters_in($_GET), get_filters_in($_POST));
-    dd($filter_params);
+//    dd($filter_params);
 
     return $result;
 }
