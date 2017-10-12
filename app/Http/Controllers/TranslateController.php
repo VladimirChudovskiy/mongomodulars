@@ -17,4 +17,5 @@ class TranslateController extends BaseController
         return view('translations.index', $this->data);
     }
 
+
 }

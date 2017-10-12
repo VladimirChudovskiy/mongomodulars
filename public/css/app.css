@@ -11409,3 +11409,7 @@ a.navbar-brand {
   background: #d89000;
 }
 
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+

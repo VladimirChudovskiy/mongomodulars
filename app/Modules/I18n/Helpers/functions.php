@@ -17,29 +17,25 @@ function l(){
  * @param null $locale - locale for translation. Default value config('app.locale')
  * @return string - translation value
  */
-function t($full_key, $value, $locale = null){
+function t($full_key, $value = null, $locale = null){
     if($locale == null){
         $locale = l();
     }
-    if(is_string($full_key)){
-        $translation_object = Translation::getInstance();
-        return $translation_object->translate($full_key, $value);
-    }else{
+
+    if( ! is_string($full_key)){
         $full_key->t($value, $locale);
     }
 
-//
-//    if(isset($obj->{$prop.'_'.$locale})){
-//        return $obj->{$prop.'_'.$locale};
-//    }
-//
-//    if(isset($obj->{$prop.'_etl'})){
-//        return $obj->{$prop.'_etl'};
-//    }
-//
-//    if(isset($obj->{$prop})){
-//        return $obj->{$prop};
-//    }
-//
-//    return null;
+    $t_instance = Translation::getInstance();
+
+    if( ! $t_instance->existTranslation($full_key) ){
+        $t_instance->createTranslation($full_key, $value, 'etl');
+    }
+
+    if($t_instance->existTranslationByLocale($full_key, $locale)){
+        return $t_instance->getTranslation($full_key, $locale);
+    }else{
+        return $t_instance->getTranslation($full_key, 'etl');
+    }
+
 }

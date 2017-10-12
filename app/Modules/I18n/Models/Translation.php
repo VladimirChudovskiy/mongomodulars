@@ -16,4 +16,12 @@ class Translation extends Imodel
         return $this->{'value_'.$abbr};
     }
 
+    public function hasLocaleValue($locale){
+        if(isset($this->{'value_'.$locale}) && !empty($this->{'value_'.$locale})){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }
