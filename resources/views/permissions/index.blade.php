@@ -1,14 +1,9 @@
 @extends('layouts.app')
 
-@section('page_heading')
-    <div class="row wrapper border-bottom white-bg page-heading">
-        <div class="col-lg-10">
-            <h2>{{ t('cp__title__resources_list', 'Список ресурсов') }}</h2>
-        </div>
-        <div class="col-lg-2">
-
-        </div>
-    </div>
+@section('content_title')
+    <h1 class="panel-title">
+        Список ресурсов
+    </h1>
 @endsection
 
 @section('content')

@@ -1,15 +1,10 @@
 @extends('layouts.app')
 
-
-
-@section('page_heading')
-    <div class="row border-bottom white-bg page-heading">
-        <div class="col-md-12">
-            <h2>{{ t('cp__roles__page_edit_permissions', 'Страница редактирования разрешений') }}</h2>
-        </div>
-    </div>
+@section('content_title')
+    <h1 class="panel-title">
+        Страница редактирования разрешений
+    </h1>
 @endsection
-
 
 @section('content')
     <div class="ibox">

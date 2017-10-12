@@ -1,11 +1,9 @@
 @extends('layouts.app')
 
-@section('page_heading')
-    <div class="row border-bottom white-bg page-heading">
-        <div class="col-md-12">
-            <h2>{{ t('cp__roles__edit', 'Редактировать') }}</h2>
-        </div>
-    </div>
+@section('content_title')
+    <h1 class="panel-title">
+        Редактировать
+    </h1>
 @endsection
 
 @section('content')

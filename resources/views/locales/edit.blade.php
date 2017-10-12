@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('content')
+@section('content_title')
+    <h1 class="panel-title">
+        Редактировать язык {{ $locale->t('name') }}
+    </h1>
+@endsection
 
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Редактировать языка {{ $locale->t('name') }}</h1>
-        </div>
-    </div>
+@section('content')
 
     <div class="row">
         <div class="col-md-12">

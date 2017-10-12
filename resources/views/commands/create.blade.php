@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('content')
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Создать команду</h1>
-        </div>
-    </div>
+@section('content_title')
+    <h1 class="panel-title">
+        Создать команду
+    </h1>
+@endsection
 
+@section('content')
     <div class="row">
         <div class="col-md-12">
             {!! Form::open(['route'=>['commands.store', $service->_id]]) !!}

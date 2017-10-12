@@ -3,7 +3,7 @@
 @section('content_title')
     <h3 class="panel-title">
         Языки
-        <a href="{{ route('locales.create') }}" class="found btn btn-default btn-sm">
+        <a href="{{ route('locales.create') }}" class="found btn btn-wm-btn-first btn-sm">
             <span class="fa fa-plus"></span>
             Добавить
         </a>
@@ -12,13 +12,6 @@
 
 @section('content')
         <div class="row">
-            <div class="col-md-4">
-                <h1>Языки</h1>
-                <a href="{{ route('locales.create') }}" class="found btn btn-primary">
-                    <span class="fa fa-plus"></span>
-                    Добавить
-                </a>
-            </div>
             <div class="col-md-8">
                 <h1>Фильтр</h1>
                 @include('locales.parts.filter_search')

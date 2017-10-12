@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
+@section('content_title')
+    <h1 class="panel-title">
+        Команды для {{ $service->t('name') }}
+        <a href="{{ route('commands.create', [$service->_id]) }}" class="found btn btn-wm-btn-first btn-sm">
+            <span class="fa fa-plus"></span>
+            Добавить
+        </a>
+    </h1>
+@endsection
+
 @section('content')
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Команды для {{ $service->t('name') }}</h1>
-            <a href="{{ route('commands.create', [$service->_id]) }}" class="btn btn-success">Добавить</a>
-        </div>
-    </div>
     <div class="row">
         <div class="col-md-12">
             @include('services.parts.tabs')

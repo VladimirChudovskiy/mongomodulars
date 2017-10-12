@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('content')
+@section('content_title')
+    <h1 class="panel-title">
+        Редактировать пользователя
+    </h1>
+@endsection
 
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Редактировать пользователя</h1>
-        </div>
-    </div>
+@section('content')
     <div class="row">
         <div class="col-md-12">
             @include('users.parts.tabs')
@@ -39,5 +39,4 @@
             {!! Form::close() !!}
         </div>
     </div>
-
 @stop

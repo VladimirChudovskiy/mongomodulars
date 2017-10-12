@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
+@section('content_title')
+    <h1 class="panel-title">
+        Услуги
+        <a href="{{ route('services.create', [$user->_id]) }}" class="found btn btn-default btn-sm">
+            <span class="fa fa-plus"></span>
+            Добавить
+        </a>
+    </h1>
+@endsection
+
 @section('content')
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Услуги</h1>
-            <a href="{{ route('services.create', [$user->_id]) }}" class="btn btn-success">Добавить</a>
-        </div>
-    </div>
     <div class="row">
         <div class="col-md-12">
             @include('users.parts.tabs')
