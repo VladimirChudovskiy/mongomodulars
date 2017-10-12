@@ -9,6 +9,8 @@ class Imodel extends Model
 {
     use TranslateProperty;
 
+    public $rules = [];
+
     public function scopeFilter($query, $params){
         if(isset($params) && !empty($params)){
             $this->prepareWhere($query, $params);

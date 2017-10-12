@@ -39,6 +39,11 @@
                                 Языки
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('translates.index') }}">
+                                Переводы
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown">

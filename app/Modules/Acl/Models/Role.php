@@ -18,6 +18,11 @@ class Role extends Model
         'name', 'display_name', 'description',
     ];
 
+
+    public $rules = [
+        'name' => 'requ'
+    ];
+
     public function users()
     {
         return $this->belongsToMany('App\Modules\Acl\Models\User',

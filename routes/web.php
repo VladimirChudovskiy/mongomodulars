@@ -81,5 +81,13 @@ Route::group(['prefix' => 'services/{id}'], function () {
     Route::get('qr', 'ServiceController@qr')->name('services.qr');
 });
 
+
 Route::resource('locales', 'LocaleController');
 Route::get('locales/{id}/delete', 'LocaleController@destroy')->name('locales.delete');
+
+
+Route::group(['prefix' => 'translations'], function () {
+    Route::get('/', 'TranslateController@index')->name('translates.index');
+    Route::get('{id}/show', 'TranslateController@show')->name('translates.show');
+});
+
